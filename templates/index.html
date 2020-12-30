@@ -34,6 +34,7 @@
 
     <title>나홀로 일기장</title>
 
+    <!-- CSS Style -->
     <style>
         * {
             font-family: 'Jua', sans-serif;
@@ -63,31 +64,32 @@
 </head>
 
 <body>
-<div class="wrap">
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1>나홀로 일기장</h1>
-            <div class="posting-box">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="file">
-                    <label class="custom-file-label">사진 선택하기</label>
+    <div class="wrap">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1>나홀로 일기장</h1>
+                <div class="posting-box">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="file">
+                        <label class="custom-file-label">사진 선택하기</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="title" placeholder="사진 제목">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="content" rows="3"
+                                  placeholder="내용 입력"></textarea>
+                    </div>
+                    <button type="button" onclick="posting()" class="btn btn-primary">저장하기</button>
                 </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="title" placeholder="사진 제목">
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" id="content" rows="3"
-                              placeholder="내용 입력"></textarea>
-                </div>
-                <button type="button" onclick="posting()" class="btn btn-primary">저장하기</button>
             </div>
         </div>
+        <div class="card-columns" id="card-box">
+        </div>
     </div>
-    <div class="card-columns" id="card-box">
-    </div>
-</div>
 </body>
 
+<!-- js -->
 <script>
     $(document).ready(function () {
         bsCustomFileInput.init()
